@@ -33,9 +33,10 @@ class Game extends Component {
 
     handleKeyDown = (e) => {
         const { seconds, miliSec, timer, alphabet, score, ans } = this.state;
-        if (!(seconds + miliSec) && !timer) this.startCounting();
         const inputValue = e.target.value;
+        const str = 'qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM';
         const entered = inputValue[inputValue.length - 1];
+        if (!(seconds + miliSec) && !timer && (str.search(entered) !== -1)) this.startCounting();
         if (entered === alphabet && ans === inputValue) {
             const char = this.getRandomCharacter();
             this.setState({ alphabet: char, score: score + 1, typed: inputValue, ans: ans + char });
@@ -49,7 +50,7 @@ class Game extends Component {
             }
             this.setState({ penaltyAlert: null });
         } else {
-            if (score < 20 && inputValue !== ans && e.nativeEvent.inputType !== "deleteContentBackward") {
+            if (score < 20 && inputValue !== ans && str.search(entered) !== -1 && e.nativeEvent.inputType !== "deleteContentBackward") {
                 const ms = miliSec + 50;
                 this.setState({ milisec: parseInt(ms % 100), seconds: parseInt(seconds + ms / 100), typed: ans.substring(0, ans.length - 1), penaltyAlert: <div className="alert alert-danger" role="alert">Penalty (+5s)</div> });
             }
