@@ -7,6 +7,46 @@
   pointer-events: none;
 }
 
+.body{
+  background-color: hsl(228,78%,18%);
+  color: antiquewhite;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 10vh;
+  align-items: center;
+  padding: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alphabet{
+  background-color: white;
+  width: 75vw;
+  min-height: 10vh;
+  border-radius: 0.5rem;
+  color: green;
+  font-weight: 800;
+  font-size: 3.0rem;
+}
+
+button{
+  background-color: hsl(345,86%,60%);
+  color: antiquewhite;
+}
+
+input{
+  background-color: antiquewhite;
+  border: none;
+  outline: none;
+  width: inherit;
+}
+
+.text-btn{
+  display: flex;
+  width: 75vw !important;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

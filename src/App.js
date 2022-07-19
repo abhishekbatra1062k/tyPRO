@@ -1,23 +1,13 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import Game from './components/game';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='body'>
+      <h3 className='text-center'>Type The Aplphabet</h3>
+      <h5 className='text-center'>Typing Game to see how fasr you type. Timer starts when you do :)</h5>
+      <Game />
     </div>
   );
 }
